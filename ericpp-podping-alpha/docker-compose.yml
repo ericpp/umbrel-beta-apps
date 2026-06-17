@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: ericpp-podping-alpha_web_1
+      APP_PORT: 8089
+
+  web:
+    image: ericpp/podping-gossip-listener:latest@sha256:d0c0600165b9044ba0cfe645e072d6e3a02a3bf9ae3f6e0fc99b30c0b3fffea6
+    init: true
+    working_dir: /data
+    restart: on-failure
+    stop_grace_period: 1m
+    user: "1000:1000"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    read_only: true
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    environment:
+      NODE_FRIENDLY_NAME: "${APP_NODE_FRIENDLY_NAME}"
+      SSE_ENABLED: "1"

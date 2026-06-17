@@ -1,0 +1,16 @@
+manifestVersion: 1.1
+id: ericpp-thelounge
+category: social
+name: The Lounge
+icon: https://raw.githubusercontent.com/ericpp/umbrel-beta-apps/master/ericpp-thelounge/icon.png
+version: "0.1.11"
+tagline: The self-hosted web IRC client
+description: The self-hosted web IRC client
+developer: thelounge.chat
+website: https://thelounge.chat
+repo: https://github.com/thelounge/thelounge
+support: https://github.com/thelounge/thelounge
+port: 9000
+path: ""
+defaultUsername: "umbrel"
+deterministicPassword: true
